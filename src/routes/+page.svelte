@@ -1,11 +1,12 @@
 <script lang="ts">
-	export let data;
 	import PostItem from '$components/PostItem.svelte';
+
+	export let data;
+	console.log(data);
 </script>
 
 {#if data.posts.length}
 	{#each data.posts as post}
-		<PostItem />
-		<a href="blog/{post.slug.current}">{post.title}</a>
+		<PostItem {post} />
 	{/each}
 {/if}
