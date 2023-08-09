@@ -13,8 +13,12 @@
 	</p>
 </section>
 
-{#if data.posts.length}
-	{#each data.posts as post}
+{#await data.streamed.posts}
+	Loading...
+{:then posts}
+	{#each posts as post}
 		<PostItem {post} />
 	{/each}
-{/if}
+{:catch error}
+	<p>{error.message}</p>
+{/await}
