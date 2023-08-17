@@ -8,7 +8,7 @@
 
 {#if post}
 	<article>
-		<Card>
+		<Card class="hover:bg-muted/50">
 			<a href="blog/{post.slug.current}" title="Read full post">
 				<CardHeader>
 					{#if post.title}

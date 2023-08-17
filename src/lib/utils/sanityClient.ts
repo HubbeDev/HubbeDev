@@ -16,12 +16,6 @@ export const sanityClient = createClient({
 	apiVersion: '2023-08-09' // date of setup
 });
 
-export async function getPost(slug: string): Promise<Post> {
-	return await sanityClient.fetch(groq`*[_type == "post" && slug.current == $slug][0]`, {
-		slug
-	});
-}
-
 export interface Post {
 	_type: 'post';
 	_createdAt: string;

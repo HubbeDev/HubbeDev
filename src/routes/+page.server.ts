@@ -9,7 +9,6 @@ export const load = async () => {
 		const posts: Post[] = await sanityClient.fetch(
 			groq`*[_type == "post" && defined(slug.current)] | order(_createdAt desc)`
 		);
-
 		return posts;
 	}
 
